@@ -33,11 +33,11 @@
             this.NomTxt = new System.Windows.Forms.TextBox();
             this.Funcao = new System.Windows.Forms.Label();
             this.FunTxt = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.NumTxt = new System.Windows.Forms.TextBox();
             this.Numero = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.EmaTxt = new System.Windows.Forms.TextBox();
             this.Email = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.Dat = new System.Windows.Forms.DateTimePicker();
             this.Data = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.AdicionarBut = new System.Windows.Forms.Button();
@@ -45,7 +45,6 @@
             this.ExcluirBut = new System.Windows.Forms.Button();
             this.ConsultarBut = new System.Windows.Forms.Button();
             this.MDadosBut = new System.Windows.Forms.Button();
-            this.textBox3 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -76,6 +75,7 @@
             this.NomTxt.Name = "NomTxt";
             this.NomTxt.Size = new System.Drawing.Size(541, 31);
             this.NomTxt.TabIndex = 2;
+            this.NomTxt.TextChanged += new System.EventHandler(this.NomTxt_TextChanged);
             // 
             // Funcao
             // 
@@ -95,13 +95,13 @@
             this.FunTxt.Size = new System.Drawing.Size(541, 31);
             this.FunTxt.TabIndex = 2;
             // 
-            // textBox1
+            // NumTxt
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(64, 324);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(541, 31);
-            this.textBox1.TabIndex = 2;
+            this.NumTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NumTxt.Location = new System.Drawing.Point(64, 324);
+            this.NumTxt.Name = "NumTxt";
+            this.NumTxt.Size = new System.Drawing.Size(541, 31);
+            this.NumTxt.TabIndex = 2;
             // 
             // Numero
             // 
@@ -113,13 +113,13 @@
             this.Numero.TabIndex = 3;
             this.Numero.Text = "Número";
             // 
-            // textBox2
+            // EmaTxt
             // 
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(64, 411);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(541, 31);
-            this.textBox2.TabIndex = 2;
+            this.EmaTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.EmaTxt.Location = new System.Drawing.Point(64, 411);
+            this.EmaTxt.Name = "EmaTxt";
+            this.EmaTxt.Size = new System.Drawing.Size(541, 31);
+            this.EmaTxt.TabIndex = 2;
             // 
             // Email
             // 
@@ -131,13 +131,13 @@
             this.Email.TabIndex = 3;
             this.Email.Text = "Email";
             // 
-            // dateTimePicker1
+            // Dat
             // 
-            this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker1.Location = new System.Drawing.Point(215, 482);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(286, 22);
-            this.dateTimePicker1.TabIndex = 4;
+            this.Dat.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Dat.Location = new System.Drawing.Point(215, 482);
+            this.Dat.Name = "Dat";
+            this.Dat.Size = new System.Drawing.Size(286, 22);
+            this.Dat.TabIndex = 4;
             // 
             // Data
             // 
@@ -159,13 +159,15 @@
             // 
             // AdicionarBut
             // 
+            this.AdicionarBut.BackColor = System.Drawing.Color.GreenYellow;
             this.AdicionarBut.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AdicionarBut.Location = new System.Drawing.Point(64, 702);
             this.AdicionarBut.Name = "AdicionarBut";
             this.AdicionarBut.Size = new System.Drawing.Size(92, 42);
             this.AdicionarBut.TabIndex = 6;
             this.AdicionarBut.Text = "Adicionar";
-            this.AdicionarBut.UseVisualStyleBackColor = true;
+            this.AdicionarBut.UseVisualStyleBackColor = false;
+            this.AdicionarBut.Click += new System.EventHandler(this.AdicionarBut_Click);
             // 
             // AlterarBut
             // 
@@ -179,13 +181,14 @@
             // 
             // ExcluirBut
             // 
+            this.ExcluirBut.BackColor = System.Drawing.Color.DarkRed;
             this.ExcluirBut.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ExcluirBut.Location = new System.Drawing.Point(368, 702);
             this.ExcluirBut.Name = "ExcluirBut";
             this.ExcluirBut.Size = new System.Drawing.Size(92, 42);
             this.ExcluirBut.TabIndex = 8;
             this.ExcluirBut.Text = "Excluir";
-            this.ExcluirBut.UseVisualStyleBackColor = true;
+            this.ExcluirBut.UseVisualStyleBackColor = false;
             // 
             // ConsultarBut
             // 
@@ -207,32 +210,23 @@
             this.MDadosBut.Text = "Mostar Dados";
             this.MDadosBut.UseVisualStyleBackColor = true;
             // 
-            // textBox3
-            // 
-            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(130, 402);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(541, 31);
-            this.textBox3.TabIndex = 11;
-            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 837);
-            this.Controls.Add(this.textBox3);
+            this.ClientSize = new System.Drawing.Size(712, 850);
             this.Controls.Add(this.MDadosBut);
             this.Controls.Add(this.ConsultarBut);
             this.Controls.Add(this.ExcluirBut);
             this.Controls.Add(this.AlterarBut);
             this.Controls.Add(this.AdicionarBut);
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.Dat);
             this.Controls.Add(this.Data);
             this.Controls.Add(this.Email);
             this.Controls.Add(this.Numero);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.EmaTxt);
+            this.Controls.Add(this.NumTxt);
             this.Controls.Add(this.Funcao);
             this.Controls.Add(this.FunTxt);
             this.Controls.Add(this.NomTxt);
@@ -253,11 +247,11 @@
         private System.Windows.Forms.TextBox NomTxt;
         private System.Windows.Forms.Label Funcao;
         private System.Windows.Forms.TextBox FunTxt;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox NumTxt;
         private System.Windows.Forms.Label Numero;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox EmaTxt;
         private System.Windows.Forms.Label Email;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker Dat;
         private System.Windows.Forms.Label Data;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button AdicionarBut;
@@ -265,6 +259,5 @@
         private System.Windows.Forms.Button ExcluirBut;
         private System.Windows.Forms.Button ConsultarBut;
         private System.Windows.Forms.Button MDadosBut;
-        private System.Windows.Forms.TextBox textBox3;
     }
 }
