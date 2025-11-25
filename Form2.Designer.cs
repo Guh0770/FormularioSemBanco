@@ -45,6 +45,7 @@
             this.ExcluirBut = new System.Windows.Forms.Button();
             this.ConsultarBut = new System.Windows.Forms.Button();
             this.MDadosBut = new System.Windows.Forms.Button();
+            this.textBox3 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -206,11 +207,20 @@
             this.MDadosBut.Text = "Mostar Dados";
             this.MDadosBut.UseVisualStyleBackColor = true;
             // 
+            // textBox3
+            // 
+            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox3.Location = new System.Drawing.Point(130, 402);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(541, 31);
+            this.textBox3.TabIndex = 11;
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 837);
+            this.Controls.Add(this.textBox3);
             this.Controls.Add(this.MDadosBut);
             this.Controls.Add(this.ConsultarBut);
             this.Controls.Add(this.ExcluirBut);
@@ -255,5 +265,6 @@
         private System.Windows.Forms.Button ExcluirBut;
         private System.Windows.Forms.Button ConsultarBut;
         private System.Windows.Forms.Button MDadosBut;
+        private System.Windows.Forms.TextBox textBox3;
     }
 }
