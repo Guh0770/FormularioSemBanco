@@ -204,6 +204,7 @@
             this.ConsultarBut.TabIndex = 9;
             this.ConsultarBut.Text = "Consultar";
             this.ConsultarBut.UseVisualStyleBackColor = true;
+            this.ConsultarBut.Click += new System.EventHandler(this.ConsultarBut_Click);
             // 
             // MDadosBut
             // 

@@ -8,17 +8,37 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
+using System.Linq.Expressions;
 
 namespace primeiroprojetoti48
 {
     public partial class Form2 : Form
     {
+        Connection con = new Connection();
         public Form2()
         {
             InitializeComponent();
         }
 
-
+        private void LimparCampos()
+        {
+            IdTxt.Clear();
+            NomTxt.Clear();
+            FunTxt.Clear();
+            NumTxt.Clear();
+            EmaTxt.Clear();
+            NomTxt.Focus();
+        }
+        public class Connection
+        {
+            public SqlConnection Connect()
+            {
+                SqlConnection conn = new SqlConnection(@"Server=.\BDSENAC;Database=AgendaDB;User Id=senaclivre;Password=senaclivre;");
+                conn.Open();
+                return conn;
+            }
+        }
 
         public class Contato
         {
@@ -30,13 +50,18 @@ namespace primeiroprojetoti48
             public DateTime DataForm { get; set; }
         }
 
-        List<Contato> lista = new List<Contato>();
-        int proximoId = 1;
-
         private void AtualizarGrid()
         {
-            dataGridView1.DataSource = null;
-            dataGridView1.DataSource = lista;
+            using (SqlConnection conn = con.Connect())
+            {
+                string sql = "SELECT * FROM Contatos";
+
+                SqlDataAdapter da = new SqlDataAdapter(sql, conn);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+
+                dataGridView1.DataSource = dt;
+            }
         }
 
         private bool EmailValido(string email)
@@ -56,7 +81,7 @@ namespace primeiroprojetoti48
                 MessageBox.Show("Por favor, preencha o Nome!");
                 return;
             }
-            
+
             if (string.IsNullOrWhiteSpace(FunTxt.Text))
             {
                 MessageBox.Show("Por favor, preencha a função!");
@@ -75,43 +100,80 @@ namespace primeiroprojetoti48
                 return;
             }
 
+            try
+            {
+                //abre a conexão com o banco
+                using (SqlConnection conn = con.Connect())
+                {
+                    string sql = @"INSERT INTO Contatos (Nome, Funcao, Numero, Email, DataForm)
+                       VALUES (@Nome, @Funcao, @Numero, @Email, @DataForm)";
 
-            // Criar objeto Contato
-            Contato c = new Contato();
-            c.ID = proximoId++;
-            c.Nome = NomTxt.Text;
-            c.Funcao = FunTxt.Text;
-            c.Numero = NumTxt.Text;
-            c.Email = EmaTxt.Text;
-            c.DataForm = Dat.Value;
+                    using (SqlCommand cmd = new SqlCommand(sql, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@Nome", NomTxt.Text);
+                        cmd.Parameters.AddWithValue("@Funcao", FunTxt.Text);
+                        cmd.Parameters.AddWithValue("@Numero", NumTxt.Text);
+                        cmd.Parameters.AddWithValue("@Email", EmaTxt.Text);
+                        cmd.Parameters.AddWithValue("@DataForm", Dat.Value.Date);
 
-            // Adicionar na Lista
-            lista.Add(c);
+                        cmd.ExecuteNonQuery();
+                    }
+                }
 
-            // Atualizar grid
-            AtualizarGrid();
+                MessageBox.Show("Registro inserido com sucesso!");
 
-            // Limpar campo
-            IdTxt.Clear();
-            NomTxt.Clear();
-            FunTxt.Clear();
-            NumTxt.Clear();
-            EmaTxt.Clear();
-            
-            NomTxt.Focus();
+                // Atualizar grid
+                AtualizarGrid();
+
+                // Limpar campo
+                LimparCampos();
+
+                NomTxt.Focus();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao inserir registro: " + ex.Message);
+            }
+        }
+
+        private void ConsultarPorNome()
+        {
+            try
+            {
+                using (SqlConnection conn = con.Connect())
+                {
+                    string sql = "SELECT * FROM Contatos WHERE Nome LIKE @Nome";
+
+                    using (SqlCommand cmd = new SqlCommand(sql, conn))
+                    {
+                        // Busca pelo nome parcialmente (LIKE '%nome%')
+                        cmd.Parameters.AddWithValue("@Nome", "%" + NomTxt.Text + "%");
+
+                        SqlDataAdapter da = new SqlDataAdapter(cmd);
+                        DataTable dt = new DataTable();
+                        da.Fill(dt);
+
+                        dataGridView1.DataSource = dt;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao consultar: " + ex.Message);
+            }
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
             {
-               var contato  = lista[e.RowIndex];
-                IdTxt.Text = contato.ID.ToString();
-                NomTxt.Text = contato.Nome;
-                FunTxt.Text = contato.Funcao;
-                NumTxt.Text = contato.Numero;
-                EmaTxt.Text = contato.Email;
-                Dat.Value = contato.DataForm;
+
+                IdTxt.Text = dataGridView1.Rows[e.RowIndex].Cells["ID"].Value.ToString();
+                NomTxt.Text = dataGridView1.Rows[e.RowIndex].Cells["Nome"].Value.ToString();
+                FunTxt.Text = dataGridView1.Rows[e.RowIndex].Cells["Funcao"].Value.ToString();
+                NumTxt.Text = dataGridView1.Rows[e.RowIndex].Cells["Numero"].Value.ToString();
+                EmaTxt.Text = dataGridView1.Rows[e.RowIndex].Cells["Email"].Value.ToString();
+                Dat.Value = Convert.ToDateTime(dataGridView1.Rows[e.RowIndex].Cells["DataForm"].Value);
             }
         }
         private void AlterarBut_Click(object sender, EventArgs e)
@@ -122,24 +184,32 @@ namespace primeiroprojetoti48
                 return;
             }
 
-            int id = int.Parse(IdTxt.Text);
-
-            Contato contato = lista.FirstOrDefault(c => c.ID == id);
-            if (contato == null)
+            using (SqlConnection conn = con.Connect())
             {
-                MessageBox.Show("Registro não encontrado!");
-                return;
+                string sql = @"UPDATE Contatos
+                                 SET Nome=@Nome, Funcao=@Funcao, Numero=@Numero, Email=@Email, DataForm=@DataForm
+                                 WHERE ID=@Id";
+
+                using (SqlCommand cmd = new SqlCommand(sql, conn))
+                {
+                    cmd.Parameters.AddWithValue("id", IdTxt.Text);
+                    cmd.Parameters.AddWithValue("Nome", NomTxt.Text);
+                    cmd.Parameters.AddWithValue("Funcao", FunTxt.Text);
+                    cmd.Parameters.AddWithValue("Numero", NumTxt.Text);
+                    cmd.Parameters.AddWithValue("Email", EmaTxt.Text);
+                    cmd.Parameters.AddWithValue("DataForm", Dat.Value.Date);
+
+                    cmd.ExecuteNonQuery();
+                }
             }
 
-            contato.Nome = NomTxt.Text;
-            contato.Funcao = FunTxt.Text;
-            contato.Numero = NumTxt.Text;
-            contato.Email = EmaTxt.Text;
-            contato.DataForm = Dat.Value;
-
-            AtualizarGrid();
             MessageBox.Show("Registro alterado com sucesso!");
+            AtualizarGrid();
+
+            LimparCampos();
         }
+
+
 
         private void label2_Click(object sender, EventArgs e)
         {
@@ -156,21 +226,38 @@ namespace primeiroprojetoti48
             if (MessageBox.Show("Deseja excluir este registro?", "Confirmação", MessageBoxButtons.YesNo) == DialogResult.No)
                 return;
 
-            int id = int.Parse(IdTxt.Text);
-
-            Contato contato = lista.FirstOrDefault(c => c.ID == id);
-
-            if (contato != null)
+            using (SqlConnection conn = con.Connect())
             {
-              lista.Remove(contato);
-                AtualizarGrid();
-                MessageBox.Show("Registro excluído com sucesso!");
+                string sql = "DELETE FROM Contatos WHERE ID=@ID";
+
+                using (SqlCommand cmd = new SqlCommand(sql, conn))
+                {
+                    cmd.Parameters.AddWithValue(@"ID", IdTxt.Text);
+                    cmd.ExecuteNonQuery();
+                }
             }
+
+            MessageBox.Show("Registro excluído com sucesso!");
+            AtualizarGrid();
+            LimparCampos();
         }
+
 
         private void MDadosBut_Click(object sender, EventArgs e)
         {
-            AtualizarGrid();
+            AtualizarGrid(); //carrega todos os registros do banco
+        }
+
+        private void ConsultarBut_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(NomTxt.Text))
+            {
+                MessageBox.Show("Digite o nome para consultar!");
+                NomTxt.Focus();
+                return;
+            }
+
+            ConsultarPorNome();
         }
     }
 }
