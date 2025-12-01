@@ -1,0 +1,21 @@
+C:\Users\gustavo.noliveira11\source\repos\primeiroprojetoti48\primeiroprojetoti48\bin\Debug\primeiroprojetoti48.exe.config
+C:\Users\gustavo.noliveira11\source\repos\primeiroprojetoti48\primeiroprojetoti48\bin\Debug\primeiroprojetoti48.exe
+C:\Users\gustavo.noliveira11\source\repos\primeiroprojetoti48\primeiroprojetoti48\bin\Debug\primeiroprojetoti48.pdb
+C:\Users\gustavo.noliveira11\source\repos\primeiroprojetoti48\primeiroprojetoti48\obj\Debug\primeiroprojetoti48.csproj.AssemblyReference.cache
+C:\Users\gustavo.noliveira11\source\repos\primeiroprojetoti48\primeiroprojetoti48\obj\Debug\primeiroprojetoti48.Form1.resources
+C:\Users\gustavo.noliveira11\source\repos\primeiroprojetoti48\primeiroprojetoti48\obj\Debug\primeiroprojetoti48.Properties.Resources.resources
+C:\Users\gustavo.noliveira11\source\repos\primeiroprojetoti48\primeiroprojetoti48\obj\Debug\primeiroprojetoti48.csproj.GenerateResource.cache
+C:\Users\gustavo.noliveira11\source\repos\primeiroprojetoti48\primeiroprojetoti48\obj\Debug\primeiroprojetoti48.csproj.CoreCompileInputs.cache
+C:\Users\gustavo.noliveira11\source\repos\primeiroprojetoti48\primeiroprojetoti48\obj\Debug\primeiroprojetoti48.exe
+C:\Users\gustavo.noliveira11\source\repos\primeiroprojetoti48\primeiroprojetoti48\obj\Debug\primeiroprojetoti48.pdb
+C:\Users\gustavo.noliveira11\OneDrive - SENAC - SP\primeiroprojetoti48\bin\Debug\primeiroprojetoti48.exe.config
+C:\Users\gustavo.noliveira11\OneDrive - SENAC - SP\primeiroprojetoti48\bin\Debug\primeiroprojetoti48.exe
+C:\Users\gustavo.noliveira11\OneDrive - SENAC - SP\primeiroprojetoti48\bin\Debug\primeiroprojetoti48.pdb
+C:\Users\gustavo.noliveira11\OneDrive - SENAC - SP\primeiroprojetoti48\obj\Debug\primeiroprojetoti48.csproj.AssemblyReference.cache
+C:\Users\gustavo.noliveira11\OneDrive - SENAC - SP\primeiroprojetoti48\obj\Debug\primeiroprojetoti48.Form1.resources
+C:\Users\gustavo.noliveira11\OneDrive - SENAC - SP\primeiroprojetoti48\obj\Debug\primeiroprojetoti48.Properties.Resources.resources
+C:\Users\gustavo.noliveira11\OneDrive - SENAC - SP\primeiroprojetoti48\obj\Debug\primeiroprojetoti48.csproj.GenerateResource.cache
+C:\Users\gustavo.noliveira11\OneDrive - SENAC - SP\primeiroprojetoti48\obj\Debug\primeiroprojetoti48.csproj.CoreCompileInputs.cache
+C:\Users\gustavo.noliveira11\OneDrive - SENAC - SP\primeiroprojetoti48\obj\Debug\primeiroprojetoti48.exe
+C:\Users\gustavo.noliveira11\OneDrive - SENAC - SP\primeiroprojetoti48\obj\Debug\primeiroprojetoti48.pdb
+C:\Users\gustavo.noliveira11\OneDrive - SENAC - SP\primeiroprojetoti48\obj\Debug\primeiroprojetoti48.Form2.resources

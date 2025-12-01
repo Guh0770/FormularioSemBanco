@@ -1,0 +1,259 @@
+﻿namespace primeiroprojetoti48
+{
+    partial class Form2
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            this.Formulario = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.NomTxt = new System.Windows.Forms.TextBox();
+            this.Funcao = new System.Windows.Forms.Label();
+            this.FunTxt = new System.Windows.Forms.TextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.Numero = new System.Windows.Forms.Label();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.Email = new System.Windows.Forms.Label();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.Data = new System.Windows.Forms.Label();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.AdicionarBut = new System.Windows.Forms.Button();
+            this.AlterarBut = new System.Windows.Forms.Button();
+            this.ExcluirBut = new System.Windows.Forms.Button();
+            this.ConsultarBut = new System.Windows.Forms.Button();
+            this.MDadosBut = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.SuspendLayout();
+            // 
+            // Formulario
+            // 
+            this.Formulario.AutoSize = true;
+            this.Formulario.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Formulario.Location = new System.Drawing.Point(220, 20);
+            this.Formulario.Name = "Formulario";
+            this.Formulario.Size = new System.Drawing.Size(348, 73);
+            this.Formulario.TabIndex = 0;
+            this.Formulario.Text = "Formulário";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(60, 134);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(51, 20);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Nome";
+            // 
+            // NomTxt
+            // 
+            this.NomTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NomTxt.Location = new System.Drawing.Point(64, 157);
+            this.NomTxt.Name = "NomTxt";
+            this.NomTxt.Size = new System.Drawing.Size(541, 31);
+            this.NomTxt.TabIndex = 2;
+            // 
+            // Funcao
+            // 
+            this.Funcao.AutoSize = true;
+            this.Funcao.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Funcao.Location = new System.Drawing.Point(60, 216);
+            this.Funcao.Name = "Funcao";
+            this.Funcao.Size = new System.Drawing.Size(63, 20);
+            this.Funcao.TabIndex = 3;
+            this.Funcao.Text = "Função";
+            // 
+            // FunTxt
+            // 
+            this.FunTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FunTxt.Location = new System.Drawing.Point(64, 239);
+            this.FunTxt.Name = "FunTxt";
+            this.FunTxt.Size = new System.Drawing.Size(541, 31);
+            this.FunTxt.TabIndex = 2;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Location = new System.Drawing.Point(64, 324);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(541, 31);
+            this.textBox1.TabIndex = 2;
+            // 
+            // Numero
+            // 
+            this.Numero.AutoSize = true;
+            this.Numero.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Numero.Location = new System.Drawing.Point(60, 301);
+            this.Numero.Name = "Numero";
+            this.Numero.Size = new System.Drawing.Size(65, 20);
+            this.Numero.TabIndex = 3;
+            this.Numero.Text = "Número";
+            // 
+            // textBox2
+            // 
+            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox2.Location = new System.Drawing.Point(64, 411);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(541, 31);
+            this.textBox2.TabIndex = 2;
+            // 
+            // Email
+            // 
+            this.Email.AutoSize = true;
+            this.Email.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Email.Location = new System.Drawing.Point(60, 388);
+            this.Email.Name = "Email";
+            this.Email.Size = new System.Drawing.Size(48, 20);
+            this.Email.TabIndex = 3;
+            this.Email.Text = "Email";
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePicker1.Location = new System.Drawing.Point(215, 482);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(286, 22);
+            this.dateTimePicker1.TabIndex = 4;
+            // 
+            // Data
+            // 
+            this.Data.AutoSize = true;
+            this.Data.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Data.Location = new System.Drawing.Point(60, 482);
+            this.Data.Name = "Data";
+            this.Data.Size = new System.Drawing.Size(144, 20);
+            this.Data.TabIndex = 3;
+            this.Data.Text = "Data do formulário:";
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(64, 533);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(541, 136);
+            this.dataGridView1.TabIndex = 5;
+            // 
+            // AdicionarBut
+            // 
+            this.AdicionarBut.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AdicionarBut.Location = new System.Drawing.Point(64, 702);
+            this.AdicionarBut.Name = "AdicionarBut";
+            this.AdicionarBut.Size = new System.Drawing.Size(92, 42);
+            this.AdicionarBut.TabIndex = 6;
+            this.AdicionarBut.Text = "Adicionar";
+            this.AdicionarBut.UseVisualStyleBackColor = true;
+            // 
+            // AlterarBut
+            // 
+            this.AlterarBut.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AlterarBut.Location = new System.Drawing.Point(215, 702);
+            this.AlterarBut.Name = "AlterarBut";
+            this.AlterarBut.Size = new System.Drawing.Size(92, 42);
+            this.AlterarBut.TabIndex = 7;
+            this.AlterarBut.Text = "Alterar";
+            this.AlterarBut.UseVisualStyleBackColor = true;
+            // 
+            // ExcluirBut
+            // 
+            this.ExcluirBut.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ExcluirBut.Location = new System.Drawing.Point(368, 702);
+            this.ExcluirBut.Name = "ExcluirBut";
+            this.ExcluirBut.Size = new System.Drawing.Size(92, 42);
+            this.ExcluirBut.TabIndex = 8;
+            this.ExcluirBut.Text = "Excluir";
+            this.ExcluirBut.UseVisualStyleBackColor = true;
+            // 
+            // ConsultarBut
+            // 
+            this.ConsultarBut.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ConsultarBut.Location = new System.Drawing.Point(513, 702);
+            this.ConsultarBut.Name = "ConsultarBut";
+            this.ConsultarBut.Size = new System.Drawing.Size(107, 42);
+            this.ConsultarBut.TabIndex = 9;
+            this.ConsultarBut.Text = "Consultar";
+            this.ConsultarBut.UseVisualStyleBackColor = true;
+            // 
+            // MDadosBut
+            // 
+            this.MDadosBut.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MDadosBut.Location = new System.Drawing.Point(64, 773);
+            this.MDadosBut.Name = "MDadosBut";
+            this.MDadosBut.Size = new System.Drawing.Size(106, 52);
+            this.MDadosBut.TabIndex = 10;
+            this.MDadosBut.Text = "Mostar Dados";
+            this.MDadosBut.UseVisualStyleBackColor = true;
+            // 
+            // Form2
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(800, 837);
+            this.Controls.Add(this.MDadosBut);
+            this.Controls.Add(this.ConsultarBut);
+            this.Controls.Add(this.ExcluirBut);
+            this.Controls.Add(this.AlterarBut);
+            this.Controls.Add(this.AdicionarBut);
+            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.Data);
+            this.Controls.Add(this.Email);
+            this.Controls.Add(this.Numero);
+            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.Funcao);
+            this.Controls.Add(this.FunTxt);
+            this.Controls.Add(this.NomTxt);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.Formulario);
+            this.Name = "Form2";
+            this.Text = "Form2";
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
+        }
+
+        #endregion
+
+        private System.Windows.Forms.Label Formulario;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox NomTxt;
+        private System.Windows.Forms.Label Funcao;
+        private System.Windows.Forms.TextBox FunTxt;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label Numero;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Label Email;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.Label Data;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button AdicionarBut;
+        private System.Windows.Forms.Button AlterarBut;
+        private System.Windows.Forms.Button ExcluirBut;
+        private System.Windows.Forms.Button ConsultarBut;
+        private System.Windows.Forms.Button MDadosBut;
+    }
+}
