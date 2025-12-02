@@ -33,11 +33,19 @@
             this.NomTxt = new System.Windows.Forms.TextBox();
             this.Funcao = new System.Windows.Forms.Label();
             this.FunTxt = new System.Windows.Forms.TextBox();
+<<<<<<< HEAD
             this.NumTxt = new System.Windows.Forms.TextBox();
             this.Numero = new System.Windows.Forms.Label();
             this.EmaTxt = new System.Windows.Forms.TextBox();
             this.Email = new System.Windows.Forms.Label();
             this.Dat = new System.Windows.Forms.DateTimePicker();
+=======
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.Numero = new System.Windows.Forms.Label();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.Email = new System.Windows.Forms.Label();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+>>>>>>> ff732acce99460e2eb393d270036f731ba6c015a
             this.Data = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.AdicionarBut = new System.Windows.Forms.Button();
@@ -45,8 +53,11 @@
             this.ExcluirBut = new System.Windows.Forms.Button();
             this.ConsultarBut = new System.Windows.Forms.Button();
             this.MDadosBut = new System.Windows.Forms.Button();
+<<<<<<< HEAD
             this.ID = new System.Windows.Forms.Label();
             this.IdTxt = new System.Windows.Forms.TextBox();
+=======
+>>>>>>> ff732acce99460e2eb393d270036f731ba6c015a
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -77,7 +88,10 @@
             this.NomTxt.Name = "NomTxt";
             this.NomTxt.Size = new System.Drawing.Size(541, 31);
             this.NomTxt.TabIndex = 2;
+<<<<<<< HEAD
             this.NomTxt.TextChanged += new System.EventHandler(this.NomTxt_TextChanged);
+=======
+>>>>>>> ff732acce99460e2eb393d270036f731ba6c015a
             // 
             // Funcao
             // 
@@ -97,6 +111,7 @@
             this.FunTxt.Size = new System.Drawing.Size(541, 31);
             this.FunTxt.TabIndex = 2;
             // 
+<<<<<<< HEAD
             // NumTxt
             // 
             this.NumTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -104,6 +119,15 @@
             this.NumTxt.Name = "NumTxt";
             this.NumTxt.Size = new System.Drawing.Size(541, 31);
             this.NumTxt.TabIndex = 2;
+=======
+            // textBox1
+            // 
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Location = new System.Drawing.Point(64, 324);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(541, 31);
+            this.textBox1.TabIndex = 2;
+>>>>>>> ff732acce99460e2eb393d270036f731ba6c015a
             // 
             // Numero
             // 
@@ -115,6 +139,7 @@
             this.Numero.TabIndex = 3;
             this.Numero.Text = "Número";
             // 
+<<<<<<< HEAD
             // EmaTxt
             // 
             this.EmaTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -122,6 +147,15 @@
             this.EmaTxt.Name = "EmaTxt";
             this.EmaTxt.Size = new System.Drawing.Size(541, 31);
             this.EmaTxt.TabIndex = 2;
+=======
+            // textBox2
+            // 
+            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox2.Location = new System.Drawing.Point(64, 411);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(541, 31);
+            this.textBox2.TabIndex = 2;
+>>>>>>> ff732acce99460e2eb393d270036f731ba6c015a
             // 
             // Email
             // 
@@ -133,6 +167,7 @@
             this.Email.TabIndex = 3;
             this.Email.Text = "Email";
             // 
+<<<<<<< HEAD
             // Dat
             // 
             this.Dat.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -140,12 +175,25 @@
             this.Dat.Name = "Dat";
             this.Dat.Size = new System.Drawing.Size(286, 22);
             this.Dat.TabIndex = 4;
+=======
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePicker1.Location = new System.Drawing.Point(215, 482);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(286, 22);
+            this.dateTimePicker1.TabIndex = 4;
+>>>>>>> ff732acce99460e2eb393d270036f731ba6c015a
             // 
             // Data
             // 
             this.Data.AutoSize = true;
             this.Data.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+<<<<<<< HEAD
             this.Data.Location = new System.Drawing.Point(60, 542);
+=======
+            this.Data.Location = new System.Drawing.Point(60, 482);
+>>>>>>> ff732acce99460e2eb393d270036f731ba6c015a
             this.Data.Name = "Data";
             this.Data.Size = new System.Drawing.Size(144, 20);
             this.Data.TabIndex = 3;
@@ -154,6 +202,7 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+<<<<<<< HEAD
             this.dataGridView1.Location = new System.Drawing.Point(64, 593);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(541, 136);
@@ -165,22 +214,42 @@
             this.AdicionarBut.BackColor = System.Drawing.Color.GreenYellow;
             this.AdicionarBut.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AdicionarBut.Location = new System.Drawing.Point(64, 762);
+=======
+            this.dataGridView1.Location = new System.Drawing.Point(64, 533);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(541, 136);
+            this.dataGridView1.TabIndex = 5;
+            // 
+            // AdicionarBut
+            // 
+            this.AdicionarBut.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AdicionarBut.Location = new System.Drawing.Point(64, 702);
+>>>>>>> ff732acce99460e2eb393d270036f731ba6c015a
             this.AdicionarBut.Name = "AdicionarBut";
             this.AdicionarBut.Size = new System.Drawing.Size(92, 42);
             this.AdicionarBut.TabIndex = 6;
             this.AdicionarBut.Text = "Adicionar";
+<<<<<<< HEAD
             this.AdicionarBut.UseVisualStyleBackColor = false;
             this.AdicionarBut.Click += new System.EventHandler(this.AdicionarBut_Click);
+=======
+            this.AdicionarBut.UseVisualStyleBackColor = true;
+>>>>>>> ff732acce99460e2eb393d270036f731ba6c015a
             // 
             // AlterarBut
             // 
             this.AlterarBut.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+<<<<<<< HEAD
             this.AlterarBut.Location = new System.Drawing.Point(215, 762);
+=======
+            this.AlterarBut.Location = new System.Drawing.Point(215, 702);
+>>>>>>> ff732acce99460e2eb393d270036f731ba6c015a
             this.AlterarBut.Name = "AlterarBut";
             this.AlterarBut.Size = new System.Drawing.Size(92, 42);
             this.AlterarBut.TabIndex = 7;
             this.AlterarBut.Text = "Alterar";
             this.AlterarBut.UseVisualStyleBackColor = true;
+<<<<<<< HEAD
             this.AlterarBut.Click += new System.EventHandler(this.AlterarBut_Click);
             // 
             // ExcluirBut
@@ -188,33 +257,56 @@
             this.ExcluirBut.BackColor = System.Drawing.Color.DarkRed;
             this.ExcluirBut.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ExcluirBut.Location = new System.Drawing.Point(368, 762);
+=======
+            // 
+            // ExcluirBut
+            // 
+            this.ExcluirBut.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ExcluirBut.Location = new System.Drawing.Point(368, 702);
+>>>>>>> ff732acce99460e2eb393d270036f731ba6c015a
             this.ExcluirBut.Name = "ExcluirBut";
             this.ExcluirBut.Size = new System.Drawing.Size(92, 42);
             this.ExcluirBut.TabIndex = 8;
             this.ExcluirBut.Text = "Excluir";
+<<<<<<< HEAD
             this.ExcluirBut.UseVisualStyleBackColor = false;
             this.ExcluirBut.Click += new System.EventHandler(this.ExcluirBut_Click);
+=======
+            this.ExcluirBut.UseVisualStyleBackColor = true;
+>>>>>>> ff732acce99460e2eb393d270036f731ba6c015a
             // 
             // ConsultarBut
             // 
             this.ConsultarBut.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+<<<<<<< HEAD
             this.ConsultarBut.Location = new System.Drawing.Point(513, 762);
+=======
+            this.ConsultarBut.Location = new System.Drawing.Point(513, 702);
+>>>>>>> ff732acce99460e2eb393d270036f731ba6c015a
             this.ConsultarBut.Name = "ConsultarBut";
             this.ConsultarBut.Size = new System.Drawing.Size(107, 42);
             this.ConsultarBut.TabIndex = 9;
             this.ConsultarBut.Text = "Consultar";
             this.ConsultarBut.UseVisualStyleBackColor = true;
+<<<<<<< HEAD
             this.ConsultarBut.Click += new System.EventHandler(this.ConsultarBut_Click);
+=======
+>>>>>>> ff732acce99460e2eb393d270036f731ba6c015a
             // 
             // MDadosBut
             // 
             this.MDadosBut.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+<<<<<<< HEAD
             this.MDadosBut.Location = new System.Drawing.Point(64, 833);
+=======
+            this.MDadosBut.Location = new System.Drawing.Point(64, 773);
+>>>>>>> ff732acce99460e2eb393d270036f731ba6c015a
             this.MDadosBut.Name = "MDadosBut";
             this.MDadosBut.Size = new System.Drawing.Size(106, 52);
             this.MDadosBut.TabIndex = 10;
             this.MDadosBut.Text = "Mostar Dados";
             this.MDadosBut.UseVisualStyleBackColor = true;
+<<<<<<< HEAD
             this.MDadosBut.Click += new System.EventHandler(this.MDadosBut_Click);
             // 
             // ID
@@ -235,19 +327,26 @@
             this.IdTxt.Name = "IdTxt";
             this.IdTxt.Size = new System.Drawing.Size(541, 31);
             this.IdTxt.TabIndex = 2;
+=======
+>>>>>>> ff732acce99460e2eb393d270036f731ba6c015a
             // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+<<<<<<< HEAD
             this.ClientSize = new System.Drawing.Size(712, 900);
             this.Controls.Add(this.ID);
+=======
+            this.ClientSize = new System.Drawing.Size(800, 837);
+>>>>>>> ff732acce99460e2eb393d270036f731ba6c015a
             this.Controls.Add(this.MDadosBut);
             this.Controls.Add(this.ConsultarBut);
             this.Controls.Add(this.ExcluirBut);
             this.Controls.Add(this.AlterarBut);
             this.Controls.Add(this.AdicionarBut);
             this.Controls.Add(this.dataGridView1);
+<<<<<<< HEAD
             this.Controls.Add(this.Dat);
             this.Controls.Add(this.Data);
             this.Controls.Add(this.Email);
@@ -255,6 +354,14 @@
             this.Controls.Add(this.IdTxt);
             this.Controls.Add(this.EmaTxt);
             this.Controls.Add(this.NumTxt);
+=======
+            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.Data);
+            this.Controls.Add(this.Email);
+            this.Controls.Add(this.Numero);
+            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.textBox1);
+>>>>>>> ff732acce99460e2eb393d270036f731ba6c015a
             this.Controls.Add(this.Funcao);
             this.Controls.Add(this.FunTxt);
             this.Controls.Add(this.NomTxt);
@@ -275,11 +382,19 @@
         private System.Windows.Forms.TextBox NomTxt;
         private System.Windows.Forms.Label Funcao;
         private System.Windows.Forms.TextBox FunTxt;
+<<<<<<< HEAD
         private System.Windows.Forms.TextBox NumTxt;
         private System.Windows.Forms.Label Numero;
         private System.Windows.Forms.TextBox EmaTxt;
         private System.Windows.Forms.Label Email;
         private System.Windows.Forms.DateTimePicker Dat;
+=======
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label Numero;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Label Email;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+>>>>>>> ff732acce99460e2eb393d270036f731ba6c015a
         private System.Windows.Forms.Label Data;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button AdicionarBut;
@@ -287,7 +402,10 @@
         private System.Windows.Forms.Button ExcluirBut;
         private System.Windows.Forms.Button ConsultarBut;
         private System.Windows.Forms.Button MDadosBut;
+<<<<<<< HEAD
         private System.Windows.Forms.Label ID;
         private System.Windows.Forms.TextBox IdTxt;
+=======
+>>>>>>> ff732acce99460e2eb393d270036f731ba6c015a
     }
 }

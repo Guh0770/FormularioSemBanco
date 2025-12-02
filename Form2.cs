@@ -5,21 +5,30 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+<<<<<<< HEAD
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Linq.Expressions;
+=======
+using System.Threading.Tasks;
+using System.Windows.Forms;
+>>>>>>> ff732acce99460e2eb393d270036f731ba6c015a
 
 namespace primeiroprojetoti48
 {
     public partial class Form2 : Form
     {
+<<<<<<< HEAD
         Connection con = new Connection();
+=======
+>>>>>>> ff732acce99460e2eb393d270036f731ba6c015a
         public Form2()
         {
             InitializeComponent();
         }
+<<<<<<< HEAD
 
         private void LimparCampos()
         {
@@ -259,5 +268,7 @@ namespace primeiroprojetoti48
 
             ConsultarPorNome();
         }
+=======
+>>>>>>> ff732acce99460e2eb393d270036f731ba6c015a
     }
 }
