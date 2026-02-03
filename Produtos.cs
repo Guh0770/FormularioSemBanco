@@ -297,5 +297,10 @@ namespace primeiroprojetoti48
         {
 
         }
+
+        private void IdTxt_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -16,11 +16,11 @@ namespace primeiroprojetoti48
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-<<<<<<< HEAD
+
             Application.Run(new Produtos());
-=======
+
             Application.Run(new Form1());
->>>>>>> ff732acce99460e2eb393d270036f731ba6c015a
+
         }
     }
 }
