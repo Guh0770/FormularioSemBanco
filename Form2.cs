@@ -262,5 +262,10 @@ namespace primeiroprojetoti48
         {
 
         }
+
+        private void NomTxt_TextChanged_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }

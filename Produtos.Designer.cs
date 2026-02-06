@@ -105,6 +105,7 @@
             this.NomTxt.Name = "NomTxt";
             this.NomTxt.Size = new System.Drawing.Size(255, 31);
             this.NomTxt.TabIndex = 5;
+            this.NomTxt.TextChanged += new System.EventHandler(this.NomTxt_TextChanged);
             // 
             // Descricao
             // 

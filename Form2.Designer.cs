@@ -66,6 +66,7 @@
             this.NomTxt.Name = "NomTxt";
             this.NomTxt.Size = new System.Drawing.Size(541, 31);
             this.NomTxt.TabIndex = 2;
+            this.NomTxt.TextChanged += new System.EventHandler(this.NomTxt_TextChanged_1);
             // 
             // Funcao
             // 
@@ -236,6 +237,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
+
         }
 
         #endregion

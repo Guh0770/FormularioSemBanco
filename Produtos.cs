@@ -269,7 +269,7 @@ namespace primeiroprojetoti48
 
             using (SqlConnection conn = new Connection().Connect())
             {
-                string sql = "DELETE FROM Contatos WHERE ID=@ID";
+                string sql = "DELETE FROM Produtos WHERE ID=@ID";
 
                 using (SqlCommand cmd = new SqlCommand(sql, conn))
                 {
@@ -299,6 +299,11 @@ namespace primeiroprojetoti48
         }
 
         private void IdTxt_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void NomTxt_TextChanged(object sender, EventArgs e)
         {
 
         }
