@@ -23,7 +23,7 @@ namespace primeiroprojetoti48
         {
             IdTxt.Clear();
             NomTxt.Clear();
-            FunTxt.Clear();
+            EndTxt.Clear();
             NumTxt.Clear();
             EmaTxt.Clear();
             NomTxt.Focus();
@@ -80,7 +80,7 @@ namespace primeiroprojetoti48
                 return;
             }
 
-            if (string.IsNullOrWhiteSpace(FunTxt.Text))
+            if (string.IsNullOrWhiteSpace(EndTxt.Text))
             {
                 MessageBox.Show("Por favor, preencha a função!");
                 return;
@@ -109,7 +109,7 @@ namespace primeiroprojetoti48
                     using (SqlCommand cmd = new SqlCommand(sql, conn))
                     {
                         cmd.Parameters.AddWithValue("@Nome", NomTxt.Text);
-                        cmd.Parameters.AddWithValue("@Funcao", FunTxt.Text);
+                        cmd.Parameters.AddWithValue("@Funcao", EndTxt.Text);
                         cmd.Parameters.AddWithValue("@Numero", NumTxt.Text);
                         cmd.Parameters.AddWithValue("@Email", EmaTxt.Text);
                         cmd.Parameters.AddWithValue("@DataForm", Dat.Value.Date);
@@ -168,7 +168,7 @@ namespace primeiroprojetoti48
 
                 IdTxt.Text = dataGridView1.Rows[e.RowIndex].Cells["ID"].Value.ToString();
                 NomTxt.Text = dataGridView1.Rows[e.RowIndex].Cells["Nome"].Value.ToString();
-                FunTxt.Text = dataGridView1.Rows[e.RowIndex].Cells["Funcao"].Value.ToString();
+                EndTxt.Text = dataGridView1.Rows[e.RowIndex].Cells["Funcao"].Value.ToString();
                 NumTxt.Text = dataGridView1.Rows[e.RowIndex].Cells["Numero"].Value.ToString();
                 EmaTxt.Text = dataGridView1.Rows[e.RowIndex].Cells["Email"].Value.ToString();
                 Dat.Value = Convert.ToDateTime(dataGridView1.Rows[e.RowIndex].Cells["DataForm"].Value);
@@ -192,7 +192,7 @@ namespace primeiroprojetoti48
                 {
                     cmd.Parameters.AddWithValue("id", IdTxt.Text);
                     cmd.Parameters.AddWithValue("Nome", NomTxt.Text);
-                    cmd.Parameters.AddWithValue("Funcao", FunTxt.Text);
+                    cmd.Parameters.AddWithValue("Funcao", EndTxt.Text);
                     cmd.Parameters.AddWithValue("Numero", NumTxt.Text);
                     cmd.Parameters.AddWithValue("Email", EmaTxt.Text);
                     cmd.Parameters.AddWithValue("DataForm", Dat.Value.Date);

@@ -20,8 +20,8 @@
             this.Formulario = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.NomTxt = new System.Windows.Forms.TextBox();
-            this.Funcao = new System.Windows.Forms.Label();
-            this.FunTxt = new System.Windows.Forms.TextBox();
+            this.Endereco = new System.Windows.Forms.Label();
+            this.EndTxt = new System.Windows.Forms.TextBox();
             this.NumTxt = new System.Windows.Forms.TextBox();
             this.Numero = new System.Windows.Forms.Label();
             this.EmaTxt = new System.Windows.Forms.TextBox();
@@ -45,9 +45,9 @@
             this.Formulario.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Bold);
             this.Formulario.Location = new System.Drawing.Point(220, 20);
             this.Formulario.Name = "Formulario";
-            this.Formulario.Size = new System.Drawing.Size(348, 73);
+            this.Formulario.Size = new System.Drawing.Size(272, 73);
             this.Formulario.TabIndex = 0;
-            this.Formulario.Text = "Formulário";
+            this.Formulario.Text = "Clientes";
             // 
             // label1
             // 
@@ -68,23 +68,23 @@
             this.NomTxt.TabIndex = 2;
             this.NomTxt.TextChanged += new System.EventHandler(this.NomTxt_TextChanged_1);
             // 
-            // Funcao
+            // Endereco
             // 
-            this.Funcao.AutoSize = true;
-            this.Funcao.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.Funcao.Location = new System.Drawing.Point(60, 216);
-            this.Funcao.Name = "Funcao";
-            this.Funcao.Size = new System.Drawing.Size(63, 20);
-            this.Funcao.TabIndex = 3;
-            this.Funcao.Text = "Função";
+            this.Endereco.AutoSize = true;
+            this.Endereco.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.Endereco.Location = new System.Drawing.Point(60, 216);
+            this.Endereco.Name = "Endereco";
+            this.Endereco.Size = new System.Drawing.Size(78, 20);
+            this.Endereco.TabIndex = 3;
+            this.Endereco.Text = "Endereço";
             // 
-            // FunTxt
+            // EndTxt
             // 
-            this.FunTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F);
-            this.FunTxt.Location = new System.Drawing.Point(64, 239);
-            this.FunTxt.Name = "FunTxt";
-            this.FunTxt.Size = new System.Drawing.Size(541, 31);
-            this.FunTxt.TabIndex = 4;
+            this.EndTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F);
+            this.EndTxt.Location = new System.Drawing.Point(64, 239);
+            this.EndTxt.Name = "EndTxt";
+            this.EndTxt.Size = new System.Drawing.Size(541, 31);
+            this.EndTxt.TabIndex = 4;
             // 
             // NumTxt
             // 
@@ -227,8 +227,8 @@
             this.Controls.Add(this.EmaTxt);
             this.Controls.Add(this.Numero);
             this.Controls.Add(this.NumTxt);
-            this.Controls.Add(this.Funcao);
-            this.Controls.Add(this.FunTxt);
+            this.Controls.Add(this.Endereco);
+            this.Controls.Add(this.EndTxt);
             this.Controls.Add(this.NomTxt);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.Formulario);
@@ -245,8 +245,8 @@
         private System.Windows.Forms.Label Formulario;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox NomTxt;
-        private System.Windows.Forms.Label Funcao;
-        private System.Windows.Forms.TextBox FunTxt;
+        private System.Windows.Forms.Label Endereco;
+        private System.Windows.Forms.TextBox EndTxt;
         private System.Windows.Forms.TextBox NumTxt;
         private System.Windows.Forms.Label Numero;
         private System.Windows.Forms.TextBox EmaTxt;

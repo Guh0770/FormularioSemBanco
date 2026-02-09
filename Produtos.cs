@@ -55,14 +55,16 @@ namespace primeiroprojetoti48
         {
             CatCb.Items.Add("Alimentos");
             CatCb.Items.Add("Bebidas");
+            CatCb.Items.Add("Brinquedos");
             CatCb.Items.Add("Eletrônicos");
             CatCb.Items.Add("Informática");
             CatCb.Items.Add("Limpeza");
             CatCb.Items.Add("Higiene");
             CatCb.Items.Add("Vestuário");
-            CatCb.Items.Add("Acessórios");
             CatCb.Items.Add("Papelaria");
             CatCb.Items.Add("Ferramentas");
+            CatCb.Items.Add("Música");
+            CatCb.Items.Add("Cinema");
 
             AtualizarGrid();
         }

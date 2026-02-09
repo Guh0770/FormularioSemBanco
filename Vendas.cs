@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 
@@ -13,9 +7,15 @@ namespace primeiroprojetoti48
 {
     public partial class Vendas : Form
     {
-        SqlConnection conn = new SqlConnection(
-            @"Server=.\BDSENAC;Database=AgendaDB;User Id=senaclivre;Password=senaclivre;"
-);
+        public SqlConnection Connect()
+        {
+            SqlConnection conn = new SqlConnection(
+                @"Server=.\BDSENAC;Database=AgendaDB;User Id=senaclivre;Password=senaclivre;"
+            );
+            conn.Open();
+            return conn;
+        }
+
         public Vendas()
         {
             InitializeComponent();
@@ -32,45 +32,175 @@ namespace primeiroprojetoti48
             this.Close();
         }
 
+        private void AtualizarGrid()
+        {
+            using (SqlConnection conn = Connect())
+            {
+                string sql = "SELECT * FROM Vendas";
+                SqlDataAdapter da = new SqlDataAdapter(sql, conn);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                dataGridView1.DataSource = dt;
+            }
+        }
+
+        private void CalcularTotais()
+        {
+            if (QuaTex.Text == "" || PreTex.Text == "")
+                return;
+
+            int quantidade = int.Parse(QuaTex.Text);
+            decimal precoUnitario = decimal.Parse(PreTex.Text);
+
+            decimal desconto = 0;
+            if (DesTex.Text != "")
+                desconto = decimal.Parse(DesTex.Text);
+
+            decimal totalSemDesconto = quantidade * precoUnitario;
+            decimal valorDesconto = totalSemDesconto * (desconto / 100);
+            decimal totalComDesconto = totalSemDesconto - valorDesconto;
+
+            TotsTex.Text = totalSemDesconto.ToString("F2");
+            TotcTex.Text = totalComDesconto.ToString("F2");
+        }
+
         private void PreTex_TextChanged(object sender, EventArgs e)
         {
+            CalcularTotais();
+        }
 
+        private void QuaTex_TextChanged(object sender, EventArgs e)
+        {
+            CalcularTotais();
         }
 
         private void Vendas_Load(object sender, EventArgs e)
         {
-
+            AtualizarGrid();
         }
 
         private void venda_Click(object sender, EventArgs e)
         {
-
         }
 
         private void RegBut_Click(object sender, EventArgs e)
         {
-            conn.Open();
+            if (
+                IdcTex.Text == "" ||
+                IdpTex.Text == "" ||
+                QuaTex.Text == "" ||
+                PreTex.Text == ""
+            )
+            {
+                MessageBox.Show("Preencha os campos obrigatórios!");
+                return;
+            }
 
-            string sql = @"INSERT INTO Vendas
-            (IdCliente, IdProduto, DataCompra, Quantidade, PrecoUnitario, Desconto, TotalSemDesconto, TotalComDesconto)
-            VALUES
-            (@IdCliente, @IdProduto, @DataCompra, @Quantidade, @PrecoUnitario, @Desconto, @TotalSemDesconto, @TotalcomDesconto)";
+            using (SqlConnection conn = Connect())
+            {
+                string sql = @"INSERT INTO Vendas
+                (IdCliente, IdProduto, DataCompra, Quantidade, PrecoUnitario, Desconto, TotalSemDesconto, TotalComDesconto)
+                VALUES
+                (@IdCliente, @IdProduto, @DataCompra, @Quantidade, @PrecoUnitario, @Desconto, @TotalSemDesconto, @TotalComDesconto)";
 
-            SqlCommand cmd = new SqlCommand(sql, conn);
+                using (SqlCommand cmd = new SqlCommand(sql, conn))
+                {
+                    cmd.Parameters.AddWithValue("@IdCliente", int.Parse(IdcTex.Text));
+                    cmd.Parameters.AddWithValue("@IdProduto", int.Parse(IdpTex.Text));
+                    cmd.Parameters.AddWithValue("@DataCompra", DataPic.Value.Date);
+                    cmd.Parameters.AddWithValue("@Quantidade", int.Parse(QuaTex.Text));
+                    cmd.Parameters.AddWithValue("@PrecoUnitario", decimal.Parse(PreTex.Text));
+                    cmd.Parameters.AddWithValue("@Desconto", DesTex.Text == "" ? 0 : decimal.Parse(DesTex.Text));
+                    cmd.Parameters.AddWithValue("@TotalSemDesconto", decimal.Parse(TotsTex.Text));
+                    cmd.Parameters.AddWithValue("@TotalComDesconto", decimal.Parse(TotcTex.Text));
 
-            cmd.Parameters.AddWithValue("IdCliente", IdcTex.Text);
-            cmd.Parameters.AddWithValue("IdProduto", IdpTex.Text);
-            cmd.Parameters.AddWithValue("@DataCompra", DataPic.Value.Date);
-            cmd.Parameters.AddWithValue("@Quantidade", QuaTex.Text);
-            cmd.Parameters.AddWithValue("@PrecoUnitario", 0);
-            cmd.Parameters.AddWithValue("@Desconto", 0);
-            cmd.Parameters.AddWithValue("@TotalSem", TotsTex.Text);
-            cmd.Parameters.AddWithValue("@TotalCom", TotcTex.Text);
+                    cmd.ExecuteNonQuery();
+                }
+            }
 
-            cmd.ExecuteNonQuery();
-            conn.Close();
-
+            AtualizarGrid();
             MessageBox.Show("Venda registrada com sucesso!");
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
+
+                IdTex.Text = row.Cells["IdVenda"].Value.ToString();
+                IdcTex.Text = row.Cells["IdCliente"].Value.ToString();
+                IdpTex.Text = row.Cells["IdProduto"].Value.ToString();
+                QuaTex.Text = row.Cells["Quantidade"].Value.ToString();
+                PreTex.Text = row.Cells["PrecoUnitario"].Value.ToString();
+                DesTex.Text = row.Cells["Desconto"].Value.ToString();
+                TotsTex.Text = row.Cells["TotalSemDesconto"].Value.ToString();
+                TotcTex.Text = row.Cells["TotalComDesconto"].Value.ToString();
+                DataPic.Value = Convert.ToDateTime(row.Cells["DataCompra"].Value);
+            }
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void AltBut_Click(object sender, EventArgs e)
+        {
+            using (SqlConnection conn = Connect())
+            {
+                SqlCommand cmd = new SqlCommand(
+                    "UPDATE Vendas SET " +
+                    "IdCliente=@IdCliente, " +
+                    "IdProduto=@IdProduto, " +
+                    "Quantidade=@Quantidade, " +
+                    "PrecoUnitario=@PrecoUnitario, " +
+                    "Desconto=@Desconto, " +
+                    "TotalSemDesconto=@TotalSemDesconto, " +
+                    "TotalComDesconto=@TotalComDesconto, " +
+                    "DataCompra=@DataCompra " +
+                    "WHERE IdVenda=@IdVenda", conn);
+
+                cmd.Parameters.AddWithValue("@IdVenda", int.Parse(IdTex.Text));
+                cmd.Parameters.AddWithValue("@IdCliente", int.Parse(IdcTex.Text));
+                cmd.Parameters.AddWithValue("@IdProduto", int.Parse(IdpTex.Text));
+                cmd.Parameters.AddWithValue("@Quantidade", int.Parse(QuaTex.Text));
+                cmd.Parameters.AddWithValue("@PrecoUnitario", decimal.Parse(PreTex.Text));
+                cmd.Parameters.AddWithValue("@Desconto", DesTex.Text == "" ? 0 : decimal.Parse(DesTex.Text));
+                cmd.Parameters.AddWithValue("@TotalSemDesconto", decimal.Parse(TotsTex.Text));
+                cmd.Parameters.AddWithValue("@TotalComDesconto", decimal.Parse(TotcTex.Text));
+                cmd.Parameters.AddWithValue("@DataCompra", DataPic.Value.Date);
+
+                cmd.ExecuteNonQuery();
+            }
+
+            AtualizarGrid();
+            MessageBox.Show("Venda alterada com sucesso!");
+        }
+
+        private void ExcBut_Click(object sender, EventArgs e)
+        {
+            if (IdcTex.Text == "")
+            {
+                MessageBox.Show("Selecione uma venda para exluir!");
+                return;
+            }
+
+            if (MessageBox.Show("Deseja realmente excluir esta venda?", "Confirmação", MessageBoxButtons.YesNo) == DialogResult.No)
+                return;
+
+            using (SqlConnection conn = Connect())
+            {
+                SqlCommand cmd = new SqlCommand(
+                "DELETE FROM Vendas WHERE IdVenda = @IdVenda", conn);
+
+                cmd.Parameters.AddWithValue("@IdVenda", int.Parse(IdcTex.Text));
+
+                cmd.ExecuteNonQuery();
+        }
+
+            MessageBox.Show("Venda excluída com sucesso!");
+            AtualizarGrid();
         }
     }
 }
+

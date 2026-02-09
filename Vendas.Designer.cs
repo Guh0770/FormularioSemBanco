@@ -167,6 +167,7 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // dataGridView1
             // 
@@ -175,6 +176,7 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(335, 280);
             this.dataGridView1.TabIndex = 4;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // RegBut
             // 
@@ -198,6 +200,7 @@
             this.AltBut.TabIndex = 5;
             this.AltBut.Text = "Alterar";
             this.AltBut.UseVisualStyleBackColor = false;
+            this.AltBut.Click += new System.EventHandler(this.AltBut_Click);
             // 
             // ExcBut
             // 
@@ -209,6 +212,7 @@
             this.ExcBut.TabIndex = 5;
             this.ExcBut.Text = "Excluir";
             this.ExcBut.UseVisualStyleBackColor = false;
+            this.ExcBut.Click += new System.EventHandler(this.ExcBut_Click);
             // 
             // IdTex
             // 
@@ -245,6 +249,7 @@
             this.QuaTex.Name = "QuaTex";
             this.QuaTex.Size = new System.Drawing.Size(101, 20);
             this.QuaTex.TabIndex = 6;
+            this.QuaTex.TextChanged += new System.EventHandler(this.QuaTex_TextChanged);
             // 
             // PreTex
             // 
