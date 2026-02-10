@@ -155,6 +155,7 @@
             this.AdicionarBut.TabIndex = 12;
             this.AdicionarBut.Text = "Adicionar";
             this.AdicionarBut.UseVisualStyleBackColor = true;
+            this.AdicionarBut.Click += new System.EventHandler(this.AdicionarBut_Click);
             // 
             // AlterarBut
             // 
@@ -164,6 +165,7 @@
             this.AlterarBut.TabIndex = 13;
             this.AlterarBut.Text = "Alterar";
             this.AlterarBut.UseVisualStyleBackColor = true;
+            this.AlterarBut.Click += new System.EventHandler(this.AlterarBut_Click);
             // 
             // ExcluirBut
             // 
@@ -173,6 +175,7 @@
             this.ExcluirBut.TabIndex = 14;
             this.ExcluirBut.Text = "Excluir";
             this.ExcluirBut.UseVisualStyleBackColor = true;
+            this.ExcluirBut.Click += new System.EventHandler(this.ExcluirBut_Click);
             // 
             // ConsultarBut
             // 
@@ -182,6 +185,7 @@
             this.ConsultarBut.TabIndex = 15;
             this.ConsultarBut.Text = "Consultar";
             this.ConsultarBut.UseVisualStyleBackColor = true;
+            this.ConsultarBut.Click += new System.EventHandler(this.ConsultarBut_Click);
             // 
             // MDadosBut
             // 
@@ -191,6 +195,7 @@
             this.MDadosBut.TabIndex = 16;
             this.MDadosBut.Text = "Mostrar Dados";
             this.MDadosBut.UseVisualStyleBackColor = true;
+            this.MDadosBut.Click += new System.EventHandler(this.MDadosBut_Click);
             // 
             // ID
             // 

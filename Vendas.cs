@@ -44,6 +44,40 @@ namespace primeiroprojetoti48
             }
         }
 
+        private void CarregarClientes()
+        {
+            using (SqlConnection conn = Connect())
+            {
+                string sql = "SELECT ID, Nome FROM Contatos";
+
+                SqlDataAdapter da = new SqlDataAdapter(sql, conn);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+
+                CliCom.DataSource = dt;
+                CliCom.DisplayMember = "Nome";
+                CliCom.ValueMember = "ID";
+                CliCom.SelectedIndex = -1;
+            }
+        }
+
+        private void CarregarProdutos()
+        {
+            using (SqlConnection conn = Connect())
+            {
+                string sql = "SELECT ID, Nome FROM Produtos";
+
+                SqlDataAdapter da = new SqlDataAdapter(sql, conn);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+
+                CliCom.DataSource = dt;
+                CliCom.DisplayMember = "Nome";
+                CliCom.ValueMember = "ID";
+                CliCom.SelectedIndex = -1;
+            }
+        }
+
         private void CalcularTotais()
         {
             if (QuaTex.Text == "" || PreTex.Text == "")
@@ -77,6 +111,8 @@ namespace primeiroprojetoti48
         private void Vendas_Load(object sender, EventArgs e)
         {
             AtualizarGrid();
+            CarregarClientes();
+            CarregarProdutos();
         }
 
         private void venda_Click(object sender, EventArgs e)
@@ -98,6 +134,12 @@ namespace primeiroprojetoti48
 
             using (SqlConnection conn = Connect())
             {
+                if (CliCom.SelectedIndex == -1 || ProCom.SelectedIndex == -1)
+                {
+                    MessageBox.Show("Selecione um cliente e um produto!");
+                    return;
+                }
+
                 string sql = @"INSERT INTO Vendas
                 (IdCliente, IdProduto, DataCompra, Quantidade, PrecoUnitario, Desconto, TotalSemDesconto, TotalComDesconto)
                 VALUES
@@ -105,8 +147,16 @@ namespace primeiroprojetoti48
 
                 using (SqlCommand cmd = new SqlCommand(sql, conn))
                 {
-                    cmd.Parameters.AddWithValue("@IdCliente", int.Parse(IdcTex.Text));
-                    cmd.Parameters.AddWithValue("@IdProduto", int.Parse(IdpTex.Text));
+                    cmd.Parameters.AddWithValue(
+                        "@IdCliente",
+                        Convert.ToInt32(CliCom.SelectedValue)
+                    );
+
+                    cmd.Parameters.AddWithValue(
+                        "@IdProduto",
+                        Convert.ToInt32(ProCom.SelectedValue)
+                    );
+
                     cmd.Parameters.AddWithValue("@DataCompra", DataPic.Value.Date);
                     cmd.Parameters.AddWithValue("@Quantidade", int.Parse(QuaTex.Text));
                     cmd.Parameters.AddWithValue("@PrecoUnitario", decimal.Parse(PreTex.Text));
@@ -116,10 +166,11 @@ namespace primeiroprojetoti48
 
                     cmd.ExecuteNonQuery();
                 }
-            }
 
-            AtualizarGrid();
-            MessageBox.Show("Venda registrada com sucesso!");
+
+                AtualizarGrid();
+                MessageBox.Show("Venda registrada com sucesso!");
+            }
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -196,10 +247,66 @@ namespace primeiroprojetoti48
                 cmd.Parameters.AddWithValue("@IdVenda", int.Parse(IdcTex.Text));
 
                 cmd.ExecuteNonQuery();
-        }
+            }
 
             MessageBox.Show("Venda excluída com sucesso!");
             AtualizarGrid();
+        }
+
+        private void CliCom_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (CliCom.SelectedIndex != -1)
+            {
+                IdcTex.Text = CliCom.SelectedValue.ToString();
+            }
+        }
+
+        private void ProCom_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (ProCom.SelectedIndex != -1)
+                return;
+            using (SqlConnection conn = Connect())
+            {
+                string sql = "SELECT Preco FROM Produtos WHERE ID = @IdProduto";
+
+                using (SqlCommand cmd = new SqlCommand(sql, conn))
+                {
+                    cmd.Parameters.AddWithValue(
+                        "@IdProduto",
+                        Convert.ToInt32(ProCom.SelectedValue)
+                        );
+
+                    object resultado = cmd.ExecuteScalar();
+
+                    if (resultado != null)
+                    {
+                        PreTex.Text = Convert.ToDecimal(resultado).ToString("F2");
+                    }
+                }
+            }
+        }
+
+        private void clientesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form2 clientes = new Form2();
+            clientes.ShowDialog();
+        }
+
+        private void produtosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Produtos produtos = new Produtos();
+            produtos.ShowDialog();
+        }
+
+        private void vendasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Vendas vendas = new Vendas();
+            vendas.ShowDialog();
+        }
+
+        private void sairToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

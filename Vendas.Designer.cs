@@ -52,15 +52,24 @@
             this.DesTex = new System.Windows.Forms.TextBox();
             this.TotcTex = new System.Windows.Forms.TextBox();
             this.TotsTex = new System.Windows.Forms.TextBox();
+            this.ProCom = new System.Windows.Forms.ComboBox();
+            this.CliCom = new System.Windows.Forms.ComboBox();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.cadastrosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.clientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.produtosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.vendasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.sairToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // venda
             // 
             this.venda.AutoSize = true;
             this.venda.Font = new System.Drawing.Font("Impact", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.venda.Location = new System.Drawing.Point(23, 20);
+            this.venda.Location = new System.Drawing.Point(23, 37);
             this.venda.Name = "venda";
             this.venda.Size = new System.Drawing.Size(171, 60);
             this.venda.TabIndex = 0;
@@ -171,8 +180,9 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.Silver;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(646, 20);
+            this.dataGridView1.Location = new System.Drawing.Point(646, 37);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(335, 280);
             this.dataGridView1.TabIndex = 4;
@@ -182,7 +192,7 @@
             // 
             this.RegBut.BackColor = System.Drawing.Color.LimeGreen;
             this.RegBut.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RegBut.Location = new System.Drawing.Point(646, 327);
+            this.RegBut.Location = new System.Drawing.Point(646, 334);
             this.RegBut.Name = "RegBut";
             this.RegBut.Size = new System.Drawing.Size(107, 47);
             this.RegBut.TabIndex = 5;
@@ -194,7 +204,7 @@
             // 
             this.AltBut.BackColor = System.Drawing.Color.Yellow;
             this.AltBut.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AltBut.Location = new System.Drawing.Point(771, 334);
+            this.AltBut.Location = new System.Drawing.Point(773, 341);
             this.AltBut.Name = "AltBut";
             this.AltBut.Size = new System.Drawing.Size(94, 32);
             this.AltBut.TabIndex = 5;
@@ -206,7 +216,7 @@
             // 
             this.ExcBut.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.ExcBut.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ExcBut.Location = new System.Drawing.Point(890, 334);
+            this.ExcBut.Location = new System.Drawing.Point(890, 341);
             this.ExcBut.Name = "ExcBut";
             this.ExcBut.Size = new System.Drawing.Size(91, 32);
             this.ExcBut.TabIndex = 5;
@@ -228,6 +238,7 @@
             this.IdcTex.Name = "IdcTex";
             this.IdcTex.Size = new System.Drawing.Size(114, 20);
             this.IdcTex.TabIndex = 6;
+            this.IdcTex.Visible = false;
             // 
             // IdpTex
             // 
@@ -235,6 +246,7 @@
             this.IdpTex.Name = "IdpTex";
             this.IdpTex.Size = new System.Drawing.Size(114, 20);
             this.IdpTex.TabIndex = 6;
+            this.IdpTex.Visible = false;
             // 
             // DataPic
             // 
@@ -283,12 +295,81 @@
             this.TotsTex.Size = new System.Drawing.Size(140, 20);
             this.TotsTex.TabIndex = 8;
             // 
+            // ProCom
+            // 
+            this.ProCom.FormattingEnabled = true;
+            this.ProCom.Location = new System.Drawing.Point(367, 160);
+            this.ProCom.Name = "ProCom";
+            this.ProCom.Size = new System.Drawing.Size(121, 21);
+            this.ProCom.TabIndex = 9;
+            this.ProCom.SelectedIndexChanged += new System.EventHandler(this.ProCom_SelectedIndexChanged);
+            // 
+            // CliCom
+            // 
+            this.CliCom.FormattingEnabled = true;
+            this.CliCom.Location = new System.Drawing.Point(197, 160);
+            this.CliCom.Name = "CliCom";
+            this.CliCom.Size = new System.Drawing.Size(114, 21);
+            this.CliCom.TabIndex = 9;
+            this.CliCom.SelectedIndexChanged += new System.EventHandler(this.CliCom_SelectedIndexChanged);
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.cadastrosToolStripMenuItem,
+            this.sairToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(1036, 24);
+            this.menuStrip1.TabIndex = 10;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // cadastrosToolStripMenuItem
+            // 
+            this.cadastrosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.clientesToolStripMenuItem,
+            this.produtosToolStripMenuItem,
+            this.vendasToolStripMenuItem});
+            this.cadastrosToolStripMenuItem.Name = "cadastrosToolStripMenuItem";
+            this.cadastrosToolStripMenuItem.Size = new System.Drawing.Size(71, 20);
+            this.cadastrosToolStripMenuItem.Text = "Cadastros";
+            // 
+            // clientesToolStripMenuItem
+            // 
+            this.clientesToolStripMenuItem.Name = "clientesToolStripMenuItem";
+            this.clientesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.clientesToolStripMenuItem.Text = "Clientes";
+            this.clientesToolStripMenuItem.Click += new System.EventHandler(this.clientesToolStripMenuItem_Click);
+            // 
+            // produtosToolStripMenuItem
+            // 
+            this.produtosToolStripMenuItem.Name = "produtosToolStripMenuItem";
+            this.produtosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.produtosToolStripMenuItem.Text = "Produtos";
+            this.produtosToolStripMenuItem.Click += new System.EventHandler(this.produtosToolStripMenuItem_Click);
+            // 
+            // vendasToolStripMenuItem
+            // 
+            this.vendasToolStripMenuItem.Name = "vendasToolStripMenuItem";
+            this.vendasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.vendasToolStripMenuItem.Text = "Vendas";
+            this.vendasToolStripMenuItem.Click += new System.EventHandler(this.vendasToolStripMenuItem_Click);
+            // 
+            // sairToolStripMenuItem
+            // 
+            this.sairToolStripMenuItem.Name = "sairToolStripMenuItem";
+            this.sairToolStripMenuItem.Size = new System.Drawing.Size(38, 20);
+            this.sairToolStripMenuItem.Text = "Sair";
+            this.sairToolStripMenuItem.Click += new System.EventHandler(this.sairToolStripMenuItem_Click_1);
+            // 
             // Vendas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(1036, 408);
+            this.Controls.Add(this.CliCom);
+            this.Controls.Add(this.ProCom);
             this.Controls.Add(this.TotsTex);
             this.Controls.Add(this.TotcTex);
             this.Controls.Add(this.DataPic);
@@ -313,11 +394,15 @@
             this.Controls.Add(this.IDCliente);
             this.Controls.Add(this.IdLabel);
             this.Controls.Add(this.venda);
+            this.Controls.Add(this.menuStrip1);
+            this.MainMenuStrip = this.menuStrip1;
             this.Name = "Vendas";
             this.Text = "Vendas";
             this.Load += new System.EventHandler(this.Vendas_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -349,5 +434,13 @@
         private System.Windows.Forms.TextBox DesTex;
         private System.Windows.Forms.TextBox TotcTex;
         private System.Windows.Forms.TextBox TotsTex;
+        private System.Windows.Forms.ComboBox ProCom;
+        private System.Windows.Forms.ComboBox CliCom;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem cadastrosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem clientesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem produtosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem vendasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem sairToolStripMenuItem;
     }
 }

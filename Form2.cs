@@ -19,6 +19,11 @@ namespace primeiroprojetoti48
             InitializeComponent();
         }
 
+        private void Form2_Load(object sender, EventArgs e)
+        {
+            AtualizarGrid();
+        }
+
         private void LimparCampos()
         {
             IdTxt.Clear();
@@ -190,7 +195,7 @@ namespace primeiroprojetoti48
 
                 using (SqlCommand cmd = new SqlCommand(sql, conn))
                 {
-                    cmd.Parameters.AddWithValue("id", IdTxt.Text);
+                    cmd.Parameters.AddWithValue("Id", IdTxt.Text);
                     cmd.Parameters.AddWithValue("Nome", NomTxt.Text);
                     cmd.Parameters.AddWithValue("Funcao", EndTxt.Text);
                     cmd.Parameters.AddWithValue("Numero", NumTxt.Text);
