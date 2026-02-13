@@ -166,19 +166,6 @@ namespace primeiroprojetoti48
             }
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.RowIndex >= 0)
-            {
-
-                IdTxt.Text = dataGridView1.Rows[e.RowIndex].Cells["ID"].Value.ToString();
-                NomTxt.Text = dataGridView1.Rows[e.RowIndex].Cells["Nome"].Value.ToString();
-                EndTxt.Text = dataGridView1.Rows[e.RowIndex].Cells["Funcao"].Value.ToString();
-                NumTxt.Text = dataGridView1.Rows[e.RowIndex].Cells["Numero"].Value.ToString();
-                EmaTxt.Text = dataGridView1.Rows[e.RowIndex].Cells["Email"].Value.ToString();
-                Dat.Value = Convert.ToDateTime(dataGridView1.Rows[e.RowIndex].Cells["DataForm"].Value);
-            }
-        }
         private void AlterarBut_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(IdTxt.Text))
@@ -271,6 +258,20 @@ namespace primeiroprojetoti48
         private void NomTxt_TextChanged_1(object sender, EventArgs e)
         {
 
+        }
+
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+
+                IdTxt.Text = dataGridView1.Rows[e.RowIndex].Cells["ID"].Value.ToString();
+                NomTxt.Text = dataGridView1.Rows[e.RowIndex].Cells["Nome"].Value.ToString();
+                EndTxt.Text = dataGridView1.Rows[e.RowIndex].Cells["Funcao"].Value.ToString();
+                NumTxt.Text = dataGridView1.Rows[e.RowIndex].Cells["Numero"].Value.ToString();
+                EmaTxt.Text = dataGridView1.Rows[e.RowIndex].Cells["Email"].Value.ToString();
+                Dat.Value = Convert.ToDateTime(dataGridView1.Rows[e.RowIndex].Cells["DataForm"].Value);
+            }
         }
     }
 }

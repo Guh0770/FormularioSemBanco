@@ -71,10 +71,10 @@ namespace primeiroprojetoti48
                 DataTable dt = new DataTable();
                 da.Fill(dt);
 
-                CliCom.DataSource = dt;
-                CliCom.DisplayMember = "Nome";
-                CliCom.ValueMember = "ID";
-                CliCom.SelectedIndex = -1;
+                ProCom.DataSource = dt;
+                ProCom.DisplayMember = "Nome";
+                ProCom.ValueMember = "ID";
+                ProCom.SelectedIndex = -1;
             }
         }
 
@@ -121,14 +121,15 @@ namespace primeiroprojetoti48
 
         private void RegBut_Click(object sender, EventArgs e)
         {
-            if (
-                IdcTex.Text == "" ||
-                IdpTex.Text == "" ||
-                QuaTex.Text == "" ||
-                PreTex.Text == ""
-            )
+            if (CliCom.SelectedIndex == -1 || ProCom.SelectedIndex == -1)
             {
-                MessageBox.Show("Preencha os campos obrigatórios!");
+                MessageBox.Show("Selecione um cliente e um produto!");
+                return;
+            }
+
+            if (QuaTex.Text == "" || PreTex.Text == "")
+            {
+                MessageBox.Show("Preencha quantidade e preço!");
                 return;
             }
 
@@ -166,6 +167,7 @@ namespace primeiroprojetoti48
 
                     cmd.ExecuteNonQuery();
                 }
+                IdTex.Clear();
 
 
                 AtualizarGrid();
@@ -188,6 +190,8 @@ namespace primeiroprojetoti48
                 TotsTex.Text = row.Cells["TotalSemDesconto"].Value.ToString();
                 TotcTex.Text = row.Cells["TotalComDesconto"].Value.ToString();
                 DataPic.Value = Convert.ToDateTime(row.Cells["DataCompra"].Value);
+                CliCom.SelectedValue = row.Cells["IdCliente"].Value;
+                ProCom.SelectedValue = row.Cells["IdProduto"].Value;
             }
         }
 
@@ -197,6 +201,13 @@ namespace primeiroprojetoti48
 
         private void AltBut_Click(object sender, EventArgs e)
         {
+
+            if (IdTex.Text == "")
+            {
+                MessageBox.Show("Selecione uma venda para alterar!");
+                return;
+            }
+
             using (SqlConnection conn = Connect())
             {
                 SqlCommand cmd = new SqlCommand(
@@ -212,8 +223,8 @@ namespace primeiroprojetoti48
                     "WHERE IdVenda=@IdVenda", conn);
 
                 cmd.Parameters.AddWithValue("@IdVenda", int.Parse(IdTex.Text));
-                cmd.Parameters.AddWithValue("@IdCliente", int.Parse(IdcTex.Text));
-                cmd.Parameters.AddWithValue("@IdProduto", int.Parse(IdpTex.Text));
+                cmd.Parameters.AddWithValue("@IdCliente", Convert.ToInt32(CliCom.SelectedValue));
+                cmd.Parameters.AddWithValue("@IdProduto", Convert.ToInt32(ProCom.SelectedValue));
                 cmd.Parameters.AddWithValue("@Quantidade", int.Parse(QuaTex.Text));
                 cmd.Parameters.AddWithValue("@PrecoUnitario", decimal.Parse(PreTex.Text));
                 cmd.Parameters.AddWithValue("@Desconto", DesTex.Text == "" ? 0 : decimal.Parse(DesTex.Text));
@@ -230,9 +241,9 @@ namespace primeiroprojetoti48
 
         private void ExcBut_Click(object sender, EventArgs e)
         {
-            if (IdcTex.Text == "")
+            if (IdTex.Text == "")
             {
-                MessageBox.Show("Selecione uma venda para exluir!");
+                MessageBox.Show("Selecione uma venda para alterar!");
                 return;
             }
 
@@ -244,7 +255,7 @@ namespace primeiroprojetoti48
                 SqlCommand cmd = new SqlCommand(
                 "DELETE FROM Vendas WHERE IdVenda = @IdVenda", conn);
 
-                cmd.Parameters.AddWithValue("@IdVenda", int.Parse(IdcTex.Text));
+                cmd.Parameters.AddWithValue("@IdVenda", int.Parse(IdTex.Text));
 
                 cmd.ExecuteNonQuery();
             }
@@ -263,8 +274,12 @@ namespace primeiroprojetoti48
 
         private void ProCom_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (ProCom.SelectedIndex != -1)
+            if (ProCom.SelectedIndex == -1 || ProCom.SelectedValue == null)
                 return;
+
+            if (!(ProCom.SelectedValue is int))
+                return;
+
             using (SqlConnection conn = Connect())
             {
                 string sql = "SELECT Preco FROM Produtos WHERE ID = @IdProduto";
@@ -274,7 +289,7 @@ namespace primeiroprojetoti48
                     cmd.Parameters.AddWithValue(
                         "@IdProduto",
                         Convert.ToInt32(ProCom.SelectedValue)
-                        );
+                    );
 
                     object resultado = cmd.ExecuteScalar();
 
@@ -284,29 +299,6 @@ namespace primeiroprojetoti48
                     }
                 }
             }
-        }
-
-        private void clientesToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Form2 clientes = new Form2();
-            clientes.ShowDialog();
-        }
-
-        private void produtosToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Produtos produtos = new Produtos();
-            produtos.ShowDialog();
-        }
-
-        private void vendasToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Vendas vendas = new Vendas();
-            vendas.ShowDialog();
-        }
-
-        private void sairToolStripMenuItem_Click_1(object sender, EventArgs e)
-        {
-            this.Close();
         }
     }
 }

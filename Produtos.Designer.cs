@@ -48,7 +48,10 @@
             this.Consultar = new System.Windows.Forms.Button();
             this.MdadosBut = new System.Windows.Forms.Button();
             this.CatCb = new System.Windows.Forms.ComboBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.BtnImagem = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -63,7 +66,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(62, 83);
+            this.label2.Location = new System.Drawing.Point(30, 121);
             this.label2.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(32, 25);
@@ -74,7 +77,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(319, 29);
+            this.label3.Location = new System.Drawing.Point(587, 21);
             this.label3.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(131, 33);
@@ -84,7 +87,7 @@
             // 
             // IdTxt
             // 
-            this.IdTxt.Location = new System.Drawing.Point(67, 121);
+            this.IdTxt.Location = new System.Drawing.Point(138, 121);
             this.IdTxt.Name = "IdTxt";
             this.IdTxt.Size = new System.Drawing.Size(184, 31);
             this.IdTxt.TabIndex = 3;
@@ -93,7 +96,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(62, 189);
+            this.label4.Location = new System.Drawing.Point(26, 189);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(68, 25);
             this.label4.TabIndex = 4;
@@ -101,16 +104,16 @@
             // 
             // NomTxt
             // 
-            this.NomTxt.Location = new System.Drawing.Point(67, 230);
+            this.NomTxt.Location = new System.Drawing.Point(138, 189);
             this.NomTxt.Name = "NomTxt";
-            this.NomTxt.Size = new System.Drawing.Size(255, 31);
+            this.NomTxt.Size = new System.Drawing.Size(257, 31);
             this.NomTxt.TabIndex = 5;
             this.NomTxt.TextChanged += new System.EventHandler(this.NomTxt_TextChanged);
             // 
             // Descricao
             // 
             this.Descricao.AutoSize = true;
-            this.Descricao.Location = new System.Drawing.Point(62, 297);
+            this.Descricao.Location = new System.Drawing.Point(26, 258);
             this.Descricao.Name = "Descricao";
             this.Descricao.Size = new System.Drawing.Size(108, 25);
             this.Descricao.TabIndex = 4;
@@ -118,15 +121,15 @@
             // 
             // DesTxt
             // 
-            this.DesTxt.Location = new System.Drawing.Point(67, 341);
+            this.DesTxt.Location = new System.Drawing.Point(138, 258);
             this.DesTxt.Name = "DesTxt";
-            this.DesTxt.Size = new System.Drawing.Size(255, 31);
+            this.DesTxt.Size = new System.Drawing.Size(257, 31);
             this.DesTxt.TabIndex = 6;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(66, 415);
+            this.label5.Location = new System.Drawing.Point(30, 336);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(68, 25);
             this.label5.TabIndex = 7;
@@ -134,7 +137,7 @@
             // 
             // PreTxt
             // 
-            this.PreTxt.Location = new System.Drawing.Point(67, 457);
+            this.PreTxt.Location = new System.Drawing.Point(140, 333);
             this.PreTxt.Name = "PreTxt";
             this.PreTxt.Size = new System.Drawing.Size(255, 31);
             this.PreTxt.TabIndex = 8;
@@ -142,7 +145,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(66, 532);
+            this.label6.Location = new System.Drawing.Point(26, 415);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(91, 25);
             this.label6.TabIndex = 9;
@@ -150,15 +153,15 @@
             // 
             // EstTxt
             // 
-            this.EstTxt.Location = new System.Drawing.Point(71, 579);
+            this.EstTxt.Location = new System.Drawing.Point(138, 412);
             this.EstTxt.Name = "EstTxt";
-            this.EstTxt.Size = new System.Drawing.Size(251, 31);
+            this.EstTxt.Size = new System.Drawing.Size(257, 31);
             this.EstTxt.TabIndex = 10;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(66, 664);
+            this.label7.Location = new System.Drawing.Point(26, 488);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(105, 25);
             this.label7.TabIndex = 11;
@@ -168,16 +171,16 @@
             // 
             this.dataGridView1.BackgroundColor = System.Drawing.Color.Cornsilk;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(375, 121);
+            this.dataGridView1.Location = new System.Drawing.Point(843, 121);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(428, 392);
+            this.dataGridView1.Size = new System.Drawing.Size(324, 392);
             this.dataGridView1.TabIndex = 13;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // Adicionar
             // 
             this.Adicionar.BackColor = System.Drawing.Color.MediumSeaGreen;
-            this.Adicionar.Location = new System.Drawing.Point(375, 550);
+            this.Adicionar.Location = new System.Drawing.Point(795, 559);
             this.Adicionar.Name = "Adicionar";
             this.Adicionar.Size = new System.Drawing.Size(119, 39);
             this.Adicionar.TabIndex = 14;
@@ -187,7 +190,7 @@
             // 
             // Alterar
             // 
-            this.Alterar.Location = new System.Drawing.Point(529, 550);
+            this.Alterar.Location = new System.Drawing.Point(949, 559);
             this.Alterar.Name = "Alterar";
             this.Alterar.Size = new System.Drawing.Size(119, 39);
             this.Alterar.TabIndex = 14;
@@ -198,7 +201,7 @@
             // Excluir
             // 
             this.Excluir.BackColor = System.Drawing.Color.DarkRed;
-            this.Excluir.Location = new System.Drawing.Point(672, 550);
+            this.Excluir.Location = new System.Drawing.Point(1092, 559);
             this.Excluir.Name = "Excluir";
             this.Excluir.Size = new System.Drawing.Size(119, 39);
             this.Excluir.TabIndex = 14;
@@ -208,7 +211,7 @@
             // 
             // Consultar
             // 
-            this.Consultar.Location = new System.Drawing.Point(442, 629);
+            this.Consultar.Location = new System.Drawing.Point(862, 638);
             this.Consultar.Name = "Consultar";
             this.Consultar.Size = new System.Drawing.Size(119, 39);
             this.Consultar.TabIndex = 15;
@@ -218,7 +221,7 @@
             // 
             // MdadosBut
             // 
-            this.MdadosBut.Location = new System.Drawing.Point(614, 618);
+            this.MdadosBut.Location = new System.Drawing.Point(1034, 627);
             this.MdadosBut.Name = "MdadosBut";
             this.MdadosBut.Size = new System.Drawing.Size(134, 60);
             this.MdadosBut.TabIndex = 15;
@@ -240,18 +243,40 @@
             "Acessórios",
             "Papelaria",
             "Ferramentas"});
-            this.CatCb.Location = new System.Drawing.Point(67, 715);
+            this.CatCb.Location = new System.Drawing.Point(138, 488);
             this.CatCb.Name = "CatCb";
-            this.CatCb.Size = new System.Drawing.Size(255, 33);
+            this.CatCb.Size = new System.Drawing.Size(257, 33);
             this.CatCb.TabIndex = 16;
             this.CatCb.SelectedIndexChanged += new System.EventHandler(this.CatCb_SelectedIndexChanged);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(471, 121);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(308, 392);
+            this.pictureBox1.TabIndex = 17;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
+            // BtnImagem
+            // 
+            this.BtnImagem.BackColor = System.Drawing.Color.Goldenrod;
+            this.BtnImagem.Location = new System.Drawing.Point(560, 559);
+            this.BtnImagem.Name = "BtnImagem";
+            this.BtnImagem.Size = new System.Drawing.Size(136, 63);
+            this.BtnImagem.TabIndex = 18;
+            this.BtnImagem.Text = "Adicionar Imagem";
+            this.BtnImagem.UseVisualStyleBackColor = false;
+            this.BtnImagem.Click += new System.EventHandler(this.BtnImagem_Click);
             // 
             // Produtos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.GhostWhite;
-            this.ClientSize = new System.Drawing.Size(824, 831);
+            this.ClientSize = new System.Drawing.Size(1316, 702);
+            this.Controls.Add(this.BtnImagem);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.CatCb);
             this.Controls.Add(this.MdadosBut);
             this.Controls.Add(this.Consultar);
@@ -277,6 +302,7 @@
             this.Name = "Produtos";
             this.Text = "Produtos";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -304,5 +330,7 @@
         private System.Windows.Forms.Button Consultar;
         private System.Windows.Forms.Button MdadosBut;
         private System.Windows.Forms.ComboBox CatCb;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button BtnImagem;
     }
 }

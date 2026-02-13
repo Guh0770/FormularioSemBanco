@@ -17,7 +17,7 @@ namespace primeiroprojetoti48
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            Application.Run(new Vendas());
+            Application.Run(new Menu());
 
         }
     }

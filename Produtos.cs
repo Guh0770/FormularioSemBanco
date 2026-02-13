@@ -13,6 +13,8 @@ namespace primeiroprojetoti48
 {
     public partial class Produtos : Form
     {
+        string caminhoImagem = "";
+
         public Produtos()
         {
             InitializeComponent();
@@ -127,8 +129,8 @@ namespace primeiroprojetoti48
                 using (SqlConnection conn = new Connection().Connect())
                 {
                     string sql = @"INSERT INTO Produtos
-                                 (Nome, Descricao, Preco, Estoque, Categoria)
-                                 Values (@Nome, @Descricao, @Preco, @Estoque, @Categoria)";
+                                 (Nome, Descricao, Preco, Estoque, Categoria, Imagem)
+                                 Values (@Nome, @Descricao, @Preco, @Estoque, @Categoria, @Imagem)";
 
                     using (SqlCommand cmd = new SqlCommand(sql, conn))
                     {
@@ -137,6 +139,7 @@ namespace primeiroprojetoti48
                         cmd.Parameters.Add("@Preco", SqlDbType.Decimal).Value = decimal.Parse(PreTxt.Text);
                         cmd.Parameters.Add("@Estoque", SqlDbType.Int).Value = int.Parse(EstTxt.Text);
                         cmd.Parameters.AddWithValue("@Categoria", CatCb.Text);
+                        cmd.Parameters.AddWithValue("@Imagem", caminhoImagem);
 
                         cmd.ExecuteNonQuery();
                     }
@@ -308,6 +311,24 @@ namespace primeiroprojetoti48
         private void NomTxt_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+
+        private void BtnImagem_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog ofd = new OpenFileDialog();
+            ofd.Filter = "Imagens|*.jpg;*.png;*.jpeg";
+
+            if (ofd.ShowDialog() == DialogResult.OK)
+            {
+                caminhoImagem = ofd.FileName;
+                pictureBox1.Image = Image.FromFile(caminhoImagem);
+            }
         }
     }
 }
