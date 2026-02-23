@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.IO;
 
 namespace primeiroprojetoti48
 {
@@ -18,6 +19,7 @@ namespace primeiroprojetoti48
         public Produtos()
         {
             InitializeComponent();
+            this.Load += Produtos_Load;
         }
 
         private void LimparCampos()
@@ -55,18 +57,25 @@ namespace primeiroprojetoti48
 
         private void Produtos_Load(object sender, EventArgs e)
         {
-            CatCb.Items.Add("Alimentos");
-            CatCb.Items.Add("Bebidas");
-            CatCb.Items.Add("Brinquedos");
-            CatCb.Items.Add("Eletrônicos");
-            CatCb.Items.Add("Informática");
-            CatCb.Items.Add("Limpeza");
-            CatCb.Items.Add("Higiene");
-            CatCb.Items.Add("Vestuário");
-            CatCb.Items.Add("Papelaria");
-            CatCb.Items.Add("Ferramentas");
-            CatCb.Items.Add("Música");
-            CatCb.Items.Add("Cinema");
+
+            CatCb.Items.Clear(); // importante
+
+            string[] categorias = {
+        "Alimentos",
+        "Bebidas",
+        "Brinquedos",
+        "Eletrônicos",
+        "Informática",
+        "Limpeza",
+        "Higiene",
+        "Vestuário",
+        "Papelaria",
+        "Ferramentas",
+        "Música",
+        "Cinema"
+    };
+
+            CatCb.Items.AddRange(categorias);
 
             AtualizarGrid();
         }
@@ -196,8 +205,10 @@ namespace primeiroprojetoti48
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            
             if (e.RowIndex >= 0)
             { 
+
               DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
 
                 IdTxt.Text = row.Cells["ID"].Value.ToString();
@@ -206,6 +217,18 @@ namespace primeiroprojetoti48
                 PreTxt.Text = row.Cells["Preco"].Value.ToString();
                 EstTxt.Text = row.Cells["Estoque"].Value.ToString();
                 CatCb.Text = row.Cells["Categoria"].Value.ToString();
+
+                string caminho = row.Cells["Imagem"].Value?.ToString();
+
+                if (!string.IsNullOrEmpty(caminho) && File.Exists(caminho))
+                {
+                    pictureBox1.Image = Image.FromFile(caminho);
+                    caminhoImagem = caminho;
+                }
+                else
+                {
+                    pictureBox1.Image = null;
+                }
             }
         }
 
@@ -237,7 +260,8 @@ namespace primeiroprojetoti48
                                  Descricao = @Descricao,
                                  Preco = @Preco,
                                  Estoque = @Estoque,
-                                 Categoria = @Categoria
+                                 Categoria = @Categoria,
+                                 Imagem = @Imagem
                                  WHERE ID = @ID";
                     using (SqlCommand cmd = new SqlCommand(sql, conn))
                     {
@@ -247,6 +271,7 @@ namespace primeiroprojetoti48
                         cmd.Parameters.AddWithValue("@Preco", decimal.Parse(PreTxt.Text));
                         cmd.Parameters.AddWithValue("@Estoque", int.Parse(EstTxt.Text));
                         cmd.Parameters.AddWithValue("@Categoria", CatCb.Text);
+                        cmd.Parameters.AddWithValue("@Imagem", caminhoImagem);
 
                         cmd.ExecuteNonQuery();
                     }
