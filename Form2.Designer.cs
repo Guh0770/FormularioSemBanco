@@ -141,6 +141,7 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.IndianRed;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(64, 593);
             this.dataGridView1.Name = "dataGridView1";
@@ -150,42 +151,46 @@
             // 
             // AdicionarBut
             // 
+            this.AdicionarBut.BackColor = System.Drawing.Color.GreenYellow;
             this.AdicionarBut.Location = new System.Drawing.Point(64, 762);
             this.AdicionarBut.Name = "AdicionarBut";
             this.AdicionarBut.Size = new System.Drawing.Size(92, 42);
             this.AdicionarBut.TabIndex = 12;
             this.AdicionarBut.Text = "Adicionar";
-            this.AdicionarBut.UseVisualStyleBackColor = true;
+            this.AdicionarBut.UseVisualStyleBackColor = false;
             this.AdicionarBut.Click += new System.EventHandler(this.AdicionarBut_Click);
             // 
             // AlterarBut
             // 
+            this.AlterarBut.BackColor = System.Drawing.Color.Gold;
             this.AlterarBut.Location = new System.Drawing.Point(215, 762);
             this.AlterarBut.Name = "AlterarBut";
             this.AlterarBut.Size = new System.Drawing.Size(92, 42);
             this.AlterarBut.TabIndex = 13;
             this.AlterarBut.Text = "Alterar";
-            this.AlterarBut.UseVisualStyleBackColor = true;
+            this.AlterarBut.UseVisualStyleBackColor = false;
             this.AlterarBut.Click += new System.EventHandler(this.AlterarBut_Click);
             // 
             // ExcluirBut
             // 
+            this.ExcluirBut.BackColor = System.Drawing.Color.OrangeRed;
             this.ExcluirBut.Location = new System.Drawing.Point(368, 762);
             this.ExcluirBut.Name = "ExcluirBut";
             this.ExcluirBut.Size = new System.Drawing.Size(92, 42);
             this.ExcluirBut.TabIndex = 14;
             this.ExcluirBut.Text = "Excluir";
-            this.ExcluirBut.UseVisualStyleBackColor = true;
+            this.ExcluirBut.UseVisualStyleBackColor = false;
             this.ExcluirBut.Click += new System.EventHandler(this.ExcluirBut_Click);
             // 
             // ConsultarBut
             // 
+            this.ConsultarBut.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.ConsultarBut.Location = new System.Drawing.Point(513, 762);
             this.ConsultarBut.Name = "ConsultarBut";
             this.ConsultarBut.Size = new System.Drawing.Size(107, 42);
             this.ConsultarBut.TabIndex = 15;
             this.ConsultarBut.Text = "Consultar";
-            this.ConsultarBut.UseVisualStyleBackColor = true;
+            this.ConsultarBut.UseVisualStyleBackColor = false;
             this.ConsultarBut.Click += new System.EventHandler(this.ConsultarBut_Click);
             // 
             // MDadosBut
@@ -218,6 +223,7 @@
             // 
             // Form2
             // 
+            this.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.ClientSize = new System.Drawing.Size(712, 900);
             this.Controls.Add(this.IdTxt);
             this.Controls.Add(this.ID);

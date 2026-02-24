@@ -105,7 +105,7 @@ namespace primeiroprojetoti48
 
             try
             {
-                //abre a conexão com o banco
+                
                 using (SqlConnection conn = con.Connect())
                 {
                     string sql = @"INSERT INTO Contatos (Nome, Funcao, Numero, Email, DataForm)
@@ -149,7 +149,7 @@ namespace primeiroprojetoti48
 
                     using (SqlCommand cmd = new SqlCommand(sql, conn))
                     {
-                        // Busca pelo nome parcialmente (LIKE '%nome%')
+                        
                         cmd.Parameters.AddWithValue("@Nome", "%" + NomTxt.Text + "%");
 
                         SqlDataAdapter da = new SqlDataAdapter(cmd);

@@ -58,7 +58,7 @@ namespace primeiroprojetoti48
         private void Produtos_Load(object sender, EventArgs e)
         {
 
-            CatCb.Items.Clear(); // importante
+            CatCb.Items.Clear();
 
             string[] categorias = {
         "Alimentos",

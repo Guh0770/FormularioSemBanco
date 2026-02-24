@@ -190,12 +190,13 @@
             // 
             // Alterar
             // 
+            this.Alterar.BackColor = System.Drawing.Color.DarkOrchid;
             this.Alterar.Location = new System.Drawing.Point(949, 559);
             this.Alterar.Name = "Alterar";
             this.Alterar.Size = new System.Drawing.Size(119, 39);
             this.Alterar.TabIndex = 14;
             this.Alterar.Text = "Alterar";
-            this.Alterar.UseVisualStyleBackColor = true;
+            this.Alterar.UseVisualStyleBackColor = false;
             this.Alterar.Click += new System.EventHandler(this.Alterar_Click);
             // 
             // Excluir
@@ -211,22 +212,24 @@
             // 
             // Consultar
             // 
+            this.Consultar.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.Consultar.Location = new System.Drawing.Point(862, 638);
             this.Consultar.Name = "Consultar";
             this.Consultar.Size = new System.Drawing.Size(119, 39);
             this.Consultar.TabIndex = 15;
             this.Consultar.Text = "Consultar";
-            this.Consultar.UseVisualStyleBackColor = true;
+            this.Consultar.UseVisualStyleBackColor = false;
             this.Consultar.Click += new System.EventHandler(this.Consultar_Click);
             // 
             // MdadosBut
             // 
+            this.MdadosBut.BackColor = System.Drawing.Color.Pink;
             this.MdadosBut.Location = new System.Drawing.Point(1034, 627);
             this.MdadosBut.Name = "MdadosBut";
             this.MdadosBut.Size = new System.Drawing.Size(134, 60);
             this.MdadosBut.TabIndex = 15;
             this.MdadosBut.Text = "Mostrar Dados";
-            this.MdadosBut.UseVisualStyleBackColor = true;
+            this.MdadosBut.UseVisualStyleBackColor = false;
             this.MdadosBut.Click += new System.EventHandler(this.MdadosBut_Click);
             // 
             // CatCb
